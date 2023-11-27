@@ -1,5 +1,5 @@
 require "active_support/core_ext/integer/time"
-require 'devise'  # Add this line
+require 'devise'
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
