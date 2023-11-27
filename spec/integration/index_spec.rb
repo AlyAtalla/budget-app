@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'categories/index.html.erb', type: :view do
   describe 'Index page' do
     before(:each) do
-      @user = User.new(name: 'fatima', email: 'fatima@gmail.com', password: '123456')
+      @user = User.new(name: 'aly', email: 'aly@gmail.com', password: '123456')
       @user.save
       @category1 = Category.new(author: @user, name: 'Books', icon: 'image1_url')
       @category1.save
@@ -19,7 +19,7 @@ RSpec.describe 'categories/index.html.erb', type: :view do
     end
 
     it 'shows the right page' do
-      expect(rendered).to have_content('Categoires')
+      expect(rendered).to have_content('Categories')
     end
 
     it 'shows a category name' do
