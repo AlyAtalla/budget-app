@@ -76,7 +76,7 @@
 <!-- Presentation Video -->
 ## 🎥 Presentation Video <a name="presentation-video"></a>
 
-- [Presentation Video Link](comming soon)
+- [Presentation Video Link][https://www.youtube.com/watch?v=l0NTABh51cI]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
