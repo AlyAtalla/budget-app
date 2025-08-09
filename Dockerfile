@@ -19,10 +19,10 @@ FROM base as build
 
 # Install packages needed to build gems
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y build-essential git libvips pkg-config
-
+apt-get install --no-install-recommends -y build-essential git libvips pkg-config libpq-dev
 # Install application gems
 COPY Gemfile Gemfile.lock ./
+RUN rm -f "injected gems" || true
 RUN bundle install && \
     rm -rf ~/.bundle/ "${BUNDLE_PATH}"/ruby/*/cache "${BUNDLE_PATH}"/ruby/*/bundler/gems/*/.git && \
     bundle exec bootsnap precompile --gemfile
