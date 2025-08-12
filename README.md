@@ -66,19 +66,6 @@
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- LIVE DEMO -->
-## 🚀 Live Demo <a name="live-demo"></a>
-
-- [Live Demo Link][https://budget-app-yyb5.onrender.com/]
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- Presentation Video -->
-## 🎥 Presentation Video <a name="presentation-video"></a>
-
-- [Presentation Video Link][https://www.youtube.com/watch?v=l0NTABh51cI]
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Getting Started
 
@@ -189,5 +176,6 @@ I would like to express my gratitude to Microverse for initiating the idea behin
 ## 📝 License <a name="license"></a>
 
 This project is [MIT](./LICENSE) licensed.
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
