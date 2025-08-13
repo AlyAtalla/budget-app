@@ -5,11 +5,17 @@ default: &default
 
 development:
   <<: *default
-  url: postgresql://postgres:YOUR_PASSWORD@YOUR_HOST:YOUR_PORT/railway
+  database: budget_app_development
+  username: postgres
+  password: 0120852868
+  host: localhost
 
 test:
   <<: *default
-  url: postgresql://postgres:YOUR_PASSWORD@YOUR_HOST:YOUR_PORT/railway
+  database: budget_app_test
+  username: postgres
+  password: 0120852868
+  host: localhost
 
 production:
   <<: *default
