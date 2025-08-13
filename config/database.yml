@@ -5,13 +5,12 @@ default: &default
 
 development:
   <<: *default
-  url: <%= ENV['DATABASE_URL'] %>
+  url: postgresql://postgres:YOUR_PASSWORD@YOUR_HOST:YOUR_PORT/railway
 
 test:
   <<: *default
-  url: <%= ENV['DATABASE_URL'] %>
+  url: postgresql://postgres:YOUR_PASSWORD@YOUR_HOST:YOUR_PORT/railway
 
 production:
   <<: *default
   url: postgresql://postgres:QUzWPmkuntybXQhsMjtRkbxRLDvRemXh@nozomi.proxy.rlwy.net:13573/railway
-
