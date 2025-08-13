@@ -8,26 +8,28 @@ threads min_threads_count, max_threads_count
 # Environment
 environment ENV.fetch("RAILS_ENV") { "development" }
 
-# Port & bind
-port ENV.fetch("PORT") { 3000 }          # Default to 3000 if PORT not set
-bind "tcp://0.0.0.0:#{ENV.fetch('PORT') { 3000 }}"  # Ensure container can access
+# Port (Railway injects the PORT env variable)
+port ENV.fetch("PORT") { 3000 }
 
-# Workers for clustered mode
+# PID file
+pidfile ENV.fetch("PIDFILE") { "tmp/pids/server.pid" }
+
+# Workers for clustered mode (only in production)
 worker_count = Integer(ENV.fetch("WEB_CONCURRENCY") { 2 })
 workers worker_count if worker_count > 1
 
-# Worker timeout for development
+# Worker timeout in development
 worker_timeout 3600 if ENV.fetch("RAILS_ENV", "development") == "development"
 
-# Preload application for faster worker boot
+# Preload app for faster worker boot
 preload_app!
 
-# Allow puma to be restarted by `rails restart` command.
-plugin :tmp_restart
-
-# Optional SSL binding (uncomment if using SSL)
-# ssl_bind '0.0.0.0', '3001', {
+# Optional SSL binding (uncomment if you have certs)
+# ssl_bind '0.0.0.0', ENV.fetch("SSL_PORT") { 3001 }, {
 #   key: ENV.fetch("SSL_KEY_PATH") { "path/to/server.key" },
 #   cert: ENV.fetch("SSL_CERT_PATH") { "path/to/server.crt" },
 #   verify_mode: "none"
 # }
+
+# Allow puma to be restarted by `rails restart` command
+plugin :tmp_restart
