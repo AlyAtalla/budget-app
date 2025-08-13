@@ -1,5 +1,8 @@
 require_relative "boot"
 
+# Load environment variables from .env before anything else
+require "dotenv/load"
+
 require "rails/all"
 
 # Require the gems listed in Gemfile, including any gems
