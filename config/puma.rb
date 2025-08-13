@@ -10,6 +10,7 @@ environment ENV.fetch("RAILS_ENV") { "development" }
 
 # Port (Railway injects the PORT env variable)
 port ENV.fetch("PORT") { 3000 }
+bind "tcp://0.0.0.0:#{ENV.fetch('PORT', 3000)}"
 
 # PID file
 pidfile ENV.fetch("PIDFILE") { "tmp/pids/server.pid" }
