@@ -19,4 +19,4 @@ test:
 
 production:
   <<: *default
-  url: postgresql://postgres:QUzWPmkuntybXQhsMjtRkbxRLDvRemXh@nozomi.proxy.rlwy.net:13573/railway
+  url: <%= ENV['DATABASE_URL'] %>
