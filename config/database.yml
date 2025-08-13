@@ -2,6 +2,7 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  url: <%= ENV['DATABASE_URL'] %> # Use Railway-provided DATABASE_URL
 
 development:
   <<: *default
@@ -19,4 +20,4 @@ test:
 
 production:
   <<: *default
-  url: <%= ENV['DATABASE_URL'] %>
+  # In production, Rails will use DATABASE_URL from Railway
